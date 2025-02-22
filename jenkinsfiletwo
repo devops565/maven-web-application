@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo "Checking out code from Git"
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Building the application"
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Checking code quality"
+            }
+        }
+
+        stage('Push Artifacts') {
+            steps {
+                echo "Pushing artifacts to Nexus/JFrog/ECR"
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying to Tomcat"
+            }
+        }
+    }
+}
+
