@@ -6,7 +6,10 @@ triggers {
 options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
 }
-    stages {
+environment {
+  env = "dev"
+}
+   stages {
         stage('Checkout') {
             steps {
                 echo "Checking out code from Git"
