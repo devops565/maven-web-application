@@ -3,6 +3,9 @@ pipeline {
 triggers {
   pollSCM '* * * * *'
 }
+options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
+}
     stages {
         stage('Checkout') {
             steps {
